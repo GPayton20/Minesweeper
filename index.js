@@ -88,6 +88,9 @@ game.revealMines = () => {
     if (game.grid[element.dataset.row][element.dataset.column].mine) {
       element.textContent = "💣";
     }
+    if (window.innerWidth < 420) {
+      element.style.fontSize = '12px';
+    }
   });
 };
 
