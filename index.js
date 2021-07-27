@@ -126,4 +126,4 @@ showInstructionsButton.addEventListener("click", game.showInstructions);
 hideInstructionsButton.addEventListener("click", game.hideModal);
 
 game.init();
-game.showInstructions();
+
