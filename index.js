@@ -4,8 +4,12 @@ const gridContainer = document.getElementById("grid");
 const safeCellsContainer = document.getElementById("safeCells");
 const flaggedCellsContainer = document.getElementById("flaggedCells");
 const overlay = document.getElementById("overlay");
+const gameEndModal = document.getElementById('gameEndModal');
 const modalText = document.getElementById("modalText");
 const playAgainButton = document.getElementById("playAgain");
+const instructionsModal = document.getElementById('instructionsModal');
+const showInstructionsButton = document.getElementById('howToPlay');
+const hideInstructionsButton = document.getElementById('closeInstructions');
 
 export const game = {};
 
@@ -95,6 +99,7 @@ game.checkWin = () => {
 
 game.showModal = (condition) => {
   overlay.classList.remove("hidden");
+  gameEndModal.classList.remove("hidden");
   if (condition === "WIN") {
     modalText.textContent = "Congratulations, you win!";
   } else if (condition === "LOSE") {
@@ -102,10 +107,20 @@ game.showModal = (condition) => {
   }
 };
 
+game.showInstructions = () => {
+  overlay.classList.remove("hidden");
+  instructionsModal.classList.remove("hidden");
+}
+
 game.hideModal = () => {
   overlay.classList.add("hidden");
+  gameEndModal.classList.add("hidden");
+  instructionsModal.classList.add("hidden");
 };
 
 playAgainButton.addEventListener("click", game.init);
+showInstructionsButton.addEventListener("click", game.showInstructions);
+hideInstructionsButton.addEventListener("click", game.hideModal);
 
 game.init();
+game.showInstructions();
