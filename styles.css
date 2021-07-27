@@ -1,0 +1,124 @@
+:root {
+  --dark-blue: #270c9e;
+  --light-blue: #665de2;
+  --dark-gray: #232323;
+  --light-gray: #eee;
+}
+
+body {
+  background: var(--dark-gray);
+  color: var(--light-gray);
+  font-family: monospace;
+  font-size: 20px;
+  letter-spacing: 1.2px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+  width: 100%;
+}
+
+.overlay {
+  position: fixed;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+
+  background-color: rgba(0, 0, 0, 0.5);
+  z-index: 10;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.modal {
+  background-color: var(--dark-gray);
+  border: 2px solid var(--light-gray);
+  border-radius: 5px;
+  text-align: center;
+  height: 200px;
+  width: 300px;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+
+  animation: slideIn 0.6s cubic-bezier(0.2, 0.8, 0.3, 1.2);
+}
+
+@keyframes slideIn {
+  from {
+    transform: translateY(250%);
+  }
+  to {
+    transform: translateY(0%);
+  }
+}
+
+.modal button {
+  background: var(--dark-blue);
+  border: 2px solid var(--light-gray);
+  border-radius: 5px;
+  color: inherit;
+  cursor: pointer;
+  font-family: inherit;
+  padding: 10px 15px;
+  text-transform: uppercase;
+}
+
+.grid {
+  display: grid;
+  grid-template-rows: repeat(10, 1fr);
+  grid-template-columns: repeat(10, 1fr);
+  height: 400px;
+  width: 400px;
+}
+
+.grid-cell {
+  height: 100%;
+  width: 100%;
+  background: var(--dark-blue);
+  border-collapse: collapse;
+  color: var(--light-gray);
+  font-size: 24px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+div.grid-cell {
+  border: none;
+}
+
+button.grid-cell {
+  border: 1px solid black;
+  background: var(--light-blue);
+}
+
+p span {
+  background: var(--dark-blue);
+  border: 1px solid var(--light-gray);
+  display: inline-block;
+  padding: 5px;
+  text-align: center;
+  min-width: 30px;
+}
+
+.hidden {
+  display: none;
+}
+
+@media (max-width: 420px) {
+  .grid {
+    height: 300px;
+    width: 300px;
+  }
+  .grid-cell {
+    font-size: 18px;
+  }
+}
