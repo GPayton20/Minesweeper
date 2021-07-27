@@ -95,7 +95,7 @@ class Cell {
     if (this.flagged === false) {
       this.flagged = true;
       game.flaggedCells += 1;
-      element.textContent = "🏴‍☠️";
+      element.textContent = "🚩";
       game.showFlaggedCells();
     } else {
       this.flagged = false;
