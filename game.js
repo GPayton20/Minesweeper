@@ -34,7 +34,9 @@ class Game {
     this.grid = this.buildGrid(10, 10);
     this.displayGrid(this.grid);
     this.placeMines(this.numberOfMines);
+    this.remainingSafeCells = 100 - this.numberOfMines;
     this.showSafeCellsRemaining();
+    this.flaggedCells = 0;
     this.showFlaggedCells();
   }
 
