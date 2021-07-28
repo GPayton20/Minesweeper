@@ -1,4 +1,5 @@
-import { game } from "./index.js";
+// import { game } from "./index.js";
+import { game } from './game.js';
 
 class Cell {
   constructor(row, column) {

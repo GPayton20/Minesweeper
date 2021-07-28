@@ -1,3 +1,6 @@
+// This will be refactored to use Class syntax
+// ! If rewritten to take in size of grid using constructor, css for grid element will need to be updated!
+
 import Cell from "./cell.js";
 
 const gridContainer = document.getElementById("grid");
