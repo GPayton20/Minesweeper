@@ -96,6 +96,9 @@ class Cell {
       this.flagged = true;
       game.flaggedCells += 1;
       element.textContent = "🚩";
+      if (window.innerWidth < 420) {
+        element.style.fontSize = '12px';
+      }
       game.showFlaggedCells();
     } else {
       this.flagged = false;
