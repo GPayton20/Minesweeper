@@ -19,7 +19,7 @@ class Game {
     this.remainingSafeCells = 100 - this.numberOfMines;
     this.flaggedCells = 0;
     this.grid = [];
-  }
+  };
 
   init = () => {
     playAgainButton.addEventListener("click", this.reset);
@@ -38,7 +38,7 @@ class Game {
     this.showSafeCellsRemaining();
     this.flaggedCells = 0;
     this.showFlaggedCells();
-  }
+  };
 
   emptyGrid = () => {
     gridContainer.replaceChildren();
@@ -128,7 +128,7 @@ class Game {
     overlay.classList.remove("hidden");
     instructionsModal.classList.remove("hidden");
     instructionsModal.querySelector('button').focus();
-  }
+  };
 
   hideModal = () => {
     overlay.classList.add("hidden");
