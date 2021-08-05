@@ -12,7 +12,7 @@ class Cell {
 
   isMine() {
     game.revealMines();
-    game.showModal("LOSE");
+    game.showGameEnd("LOSE");
   }
 
   uncover() {

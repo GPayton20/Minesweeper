@@ -109,13 +109,14 @@ class Game {
 
   checkWin = () => {
     if (this.remainingSafeCells === 0) {
-      this.showModal("WIN");
+      this.showGameEnd("WIN");
     }
   };
 
-  showModal = (condition) => {
+  showGameEnd = (condition) => {
     overlay.classList.remove("hidden");
     gameEndModal.classList.remove("hidden");
+    gameEndModal.querySelector('button').focus();
     if (condition === "WIN") {
       modalText.textContent = "Congratulations, you win!";
     } else if (condition === "LOSE") {
@@ -126,6 +127,7 @@ class Game {
   showInstructions = () => {
     overlay.classList.remove("hidden");
     instructionsModal.classList.remove("hidden");
+    instructionsModal.querySelector('button').focus();
   }
 
   hideModal = () => {
